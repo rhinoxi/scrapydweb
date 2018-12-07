@@ -4,13 +4,15 @@ import glob
 import re
 
 
-CWD = os.path.dirname(os.path.abspath(__file__))
+CWD = os.getcwd()
 DATA_PATH = os.path.join(CWD, 'data')
 PARSE_PATH = os.path.join(DATA_PATH, 'parse')
 CACHE_PATH = os.path.join(DATA_PATH, 'cache')
 DEPLOY_PATH = os.path.join(DATA_PATH, 'deploy')
 SCHEDULE_PATH = os.path.join(DATA_PATH, 'schedule')
-DEMO_PROJECTS_PATH = os.path.join(DATA_PATH, 'demo_projects')
+
+DEMO_PROJECTS_PATH = os.path.join(
+    os.path.dirname(os.path.abspath(__file__)), 'data', 'demo_projects')
 
 
 for p in [DATA_PATH, PARSE_PATH, CACHE_PATH, DEPLOY_PATH, SCHEDULE_PATH, DEMO_PROJECTS_PATH]:
